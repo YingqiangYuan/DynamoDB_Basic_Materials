@@ -16,6 +16,8 @@ box. You will rarely write code like this directly.
 
 from datetime import datetime, timezone, timedelta
 
+from pynamodb.constants import DATETIME_FORMAT
+
 from pynamodb.models import Model
 from pynamodb.attributes import (
     UnicodeAttribute,
@@ -49,8 +51,18 @@ with use_boto_session(Transaction, bsm):
     if not Transaction.exists():
         Transaction.create_table(wait=True)
 
-    for t in Transaction.scan():
-        t.delete()
+    # Clean up using low-level client because the table may contain items
+    # written by the boto3 code below, whose datetime format differs from
+    # pynamodb's internal format and would fail deserialization in scan().
+    _client = bsm.dynamodb_client
+    _table = Transaction.Meta.table_name
+    _paginator = _client.get_paginator("scan")
+    for _page in _paginator.paginate(
+        TableName=_table,
+        ProjectionExpression="card_id, tx_ts",
+    ):
+        for _item in _page.get("Items", []):
+            _client.delete_item(TableName=_table, Key=_item)
 
     base_ts = datetime(2026, 4, 1, tzinfo=timezone.utc)
 
@@ -79,7 +91,7 @@ with use_boto_session(Transaction, bsm):
                 "PutRequest": {
                     "Item": {
                         "card_id": {"S": "CD002"},
-                        "tx_ts": {"S": (base_ts + timedelta(minutes=i)).isoformat()},
+                        "tx_ts": {"S": (base_ts + timedelta(minutes=i)).strftime(DATETIME_FORMAT).zfill(31)},
                         "amount": {"N": str(100.0 + i)},
                         "merchant": {"S": f"LowLevel{i}"},
                     }
