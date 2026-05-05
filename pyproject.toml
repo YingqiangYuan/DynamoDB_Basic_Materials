@@ -1,14 +1,60 @@
+# ==============================================================================
+# The [project] table defined by Official python.org
+#
+# Read: https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
+# ==============================================================================
 [project]
-name = "learn_xyz_template"
+name = "dynamodb_basic_opeartions"
 version = "0.1.1"
+description = "Progressive pynamodb + Amazon DynamoDB POC examples — from minimal usage to CRUD, batching, query/scan, conditions, transactions, secondary indexes, and single-table design."
+readme = "README.rst"
 requires-python = ">=3.12,<4.0"
+
+# ------------------------------------------------------------------------------
+# Core Dependencies
+# ------------------------------------------------------------------------------
 dependencies = [
+    "boto3>=1.42.95,<2.0.0",
+    "boto3-stubs[dynamodb]>=1.42.95,<2.0.0",
+    "boto-session-manager>=1.8.1,<2.0.0",
+    "pynamodb>=6.1.0,<7.0.0",
+    "pynamodb-session-manager>=0.1.2,<1.0.0",
+]
+
+# ------------------------------------------------------------------------------
+# Optional dependency that can be used in ``pip install ${your_project_name}[${feature_name}]``
+# Sometime this is also called "extras"
+# Read: https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#dependencies-optional-dependencies
+#
+# IMPORTANT: all optional dependencies has to be compatible with the "requires-python" field
+# ------------------------------------------------------------------------------
+[project.optional-dependencies]
+
+# ------------------------------------------------------------------------------
+# Local Development dependenceies
+# ------------------------------------------------------------------------------
+dev = [
+    "rich>=13.8.1,<14.0.0", # pretty print
+]
+
+# ------------------------------------------------------------------------------
+# (Unit/Coverage/Integration/Load) Test dependenceies
+# ------------------------------------------------------------------------------
+test = [
+    "pytest>=8.2.2,<9.0.0", # Testing framework
+    "pytest-cov>=6.0.0,<7.0.0", # Coverage reporting
 ]
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["learn_xyz_template*"]
+include = [
+    "dynamodb_basic_opeartions*"
+]
 exclude = [
+    "dynamodb_basic_opeartions.tests",
+    "dynamodb_basic_opeartions.tests.*",
+    "dynamodb_basic_opeartions.docs",
+    "dynamodb_basic_opeartions.docs.*",
 ]
 
 [build-system]
