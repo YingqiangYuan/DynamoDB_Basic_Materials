@@ -3,6 +3,7 @@ dynamodb_basic_opeartions.egg-info/
 docs/source/**/index.md
 .claude/skills/lesson-smith*
 .claude/skills/learn-this-project-meta*
+.claude/skills/write-agent-skill*
 .claude/claude-code-message*
 .claude/settings.local.json
 tmp/
