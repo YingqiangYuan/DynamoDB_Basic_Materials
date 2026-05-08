@@ -1,49 +1,53 @@
-# TICKET: DynamoDB + pynamodb Deep Dive
-
-Read this [Tutorial](https://github.com/easyscale-academy/learn_dynamodb_basic_opeartions-project/tree/01-Learn-This-Project/)
+# TICKET: DynamoDB + pynamodb Basic Operations — Learning Checklist
 
 ## Objective
 
-Complete a deep, hands-on pass through all 12 example modules in this repository. By the end, you should be able to explain DynamoDB concepts and pynamodb usage at an interview-ready level — articulating the "what," "why," and "when" for each topic without needing to reference code.
+Complete a deep, hands-on pass through all 12 DynamoDB example modules and validate your understanding through quiz, mock interview, and demo rehearsal.
 
-## Acceptance Criteria
+Read [Tutorial](https://github.com/easyscale-academy/learn_dynamodb_basic_opeartions-project/tree/01-Learn-This-Project/)
 
-- [ ] All scripts in `examples/00-minimal-poc/` through `examples/11-single-table-many-to-many/` run successfully against your AWS account
-- [ ] You have browsed the resulting tables in the AWS Console (DynamoDB → Tables) and can describe what each script created
-- [ ] You can score **80% or higher** on the built-in Quiz (50 questions, 10 categories) using `/learn-this-project` → Quiz mode
-- [ ] For any question you answer, you can explain it in plain English as if in a technical interview — no code recitation needed, but clear articulation of the concept and reasoning
+## Checklist
 
-## What This Is NOT
+### Setup
+- [ ] Clone the repo and switch to the `01-Learn-This-Project` branch
+- [ ] Run `mise install && mise run inst` to set up the environment
+- [ ] Configure `.env` with your AWS profile (copy from `.env.example`)
+- [ ] Verify: `python examples/00-minimal-poc/s01_minimal_poc.py` runs without errors
 
-- There is no written deliverable to submit
-- There is no code to write from scratch
-- There is no deadline pressure — take the time you need
+### Absorb (learn the content)
+- [ ] Run `/learn-this-project-absorb`, complete the full walkthrough
+- [ ] Run each example script yourself (folders 00–11), read the output
+- [ ] Understand why `save()` (PutItem) differs from `update()` (UpdateItem) — this is a common source of bugs
+- [ ] Understand the cost difference between `query` and `scan` — check ConsumedCapacity in folder 09
+- [ ] Understand the single-table design mental shift: design for access patterns, not entity normalization
 
-## How to Work Through This
+### Quiz (verify understanding)
+- [ ] Run `/learn-this-project-quiz`, complete at least one full round
+- [ ] Score 80%+ on a 10-question random round
+- [ ] Review and re-study any topics where you scored poorly
 
-1. **Setup** — Follow the environment setup in README.md (two commands + AWS profile)
-2. **Learn** — Use `/learn-this-project` Guided Tour mode, run each script, check AWS Console
-3. **Test** — Switch to Quiz mode, go category by category
-4. **Fill gaps** — Any question you can't answer clearly → go back to the relevant script, re-read the folder's README.md, re-run, then retry the question
-5. **Cleanup** — Run `python examples/cleanup_all_tables.py` when done
+### Elevate (see what's beyond)
+- [ ] Run `/learn-this-project-elevate`, explore at least 1-2 directions
+- [ ] Note down "next small projects" that interest you
 
-## Suggested Order
+### Interview (pressure-test yourself)
+- [ ] Run `/learn-this-project-interview`, complete a full mock session
+- [ ] Review the debrief, note which questions need more prep
 
-Folders 00–08 can be done in any order, but for a first pass:
+### Demo (learn to present)
+- [ ] Run `/learn-this-project-demo`, rehearse at least the 5-minute version
+- [ ] Walk through the "do NOT show" checklist
 
-1. `00-minimal-poc` — Get the skeleton in your head
-2. `01-attributes` — Understand the type system
-3. `02-table-management` — Know how tables are created and billed
-4. `03-crud-basic` — Master single-item operations
-5. `04-batch-operations` — Scale to many items at once
-6. `05-query-and-scan` — The most important performance topic
-7. `06-condition-expression` — Concurrency safety without locks
-8. `07-transactions` — When you need multi-item atomicity
-9. `08-gsi-and-lsi` — Escape hatch for non-key queries
-10. `09-pipeline-metadata-demo` — See it all come together (sequential: s01→s04)
-11. `10-single-table-one-to-many` — 1:N modeling (sequential: s01→s03)
-12. `11-single-table-many-to-many` — M:N modeling, three approaches
+### Mastery Gate
+- [ ] You can explain **at least 70%** of the knowledge points from the quiz bank
+- [ ] You can answer interview-style questions with a concept and direction (even if not perfect)
+- [ ] You have a clear list of "what I'd study next" from the elevate session
 
-## Success Looks Like
+### Show Your Work
+- [ ] Create your own public repo (renamed, no "learn" prefix)
+- [ ] Commit incrementally (15-20+ commits)
+- [ ] Delete all teaching artifacts (`docs/learn-this-project/`, skills, `README-cn.md`, `TICKET.md`, etc.)
+- [ ] Write your own README
 
-You're sitting in a technical interview. The interviewer asks: "When would you use a GSI vs an LSI?" or "Walk me through how optimistic locking works in DynamoDB" or "Why is single-table design a thing?" — and you can give a clear, confident, 30-second answer that demonstrates real understanding, not memorized bullet points.
+### Cleanup
+- [ ] Run `python examples/cleanup_all_tables.py` to remove all tutorial tables from your AWS account
