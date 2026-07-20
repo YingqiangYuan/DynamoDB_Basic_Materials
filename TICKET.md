@@ -9,11 +9,11 @@ Complete a deep, hands-on pass through all 12 DynamoDB example modules (`example
 ## Checklist
 
 ### Setup
-- [ ] Clone the repo and switch to the `01-Learn-This-Project` branch
-- [ ] `mise install` — installs Python 3.12, uv, claude, pandoc as pinned in `mise.toml`
-- [ ] `cp .env.example .env` and edit it to set `AWS_PROFILE=<your-profile>` (profile needs DynamoDB read/write on `dynamodb_basic_opeartions_*` in `us-east-1`)
-- [ ] `mise run inst` — creates `.venv` and runs `uv sync --all-extras`
-- [ ] Smoke-test: `python examples/00-minimal-poc/s01_minimal_poc.py` runs end-to-end and prints `holder_name = Alice` (the first run hangs 5–30s on `create_table(wait=True)` — that's expected)
+- [X] Clone the repo and switch to the `01-Learn-This-Project` branch
+- [X] `mise install` — installs Python 3.12, uv, claude, pandoc as pinned in `mise.toml`
+- [X] `cp .env.example .env` and edit it to set `AWS_PROFILE=<your-profile>` (profile needs DynamoDB read/write on `dynamodb_basic_opeartions_*` in `us-east-1`)
+- [X] `mise run inst` — creates `.venv` and runs `uv sync --all-extras`
+- [X] Smoke-test: `python examples/00-minimal-poc/s01_minimal_poc.py` runs end-to-end and prints `holder_name = Alice` (the first run hangs 5–30s on `create_table(wait=True)` — that's expected)
 
 ### Absorb (learn the content)
 - [ ] Run `/learn-this-project-absorb` in **Orient mode** for the high-level map and the explicit `files to READ` vs `files to RUN/DO` lists
