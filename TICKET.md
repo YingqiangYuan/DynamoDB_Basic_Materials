@@ -16,12 +16,12 @@ Complete a deep, hands-on pass through all 12 DynamoDB example modules (`example
 - [X] Smoke-test: `python examples/00-minimal-poc/s01_minimal_poc.py` runs end-to-end and prints `holder_name = Alice` (the first run hangs 5–30s on `create_table(wait=True)` — that's expected)
 
 ### Absorb (learn the content)
-- [ ] Run `/learn-this-project-absorb` in **Orient mode** for the high-level map and the explicit `files to READ` vs `files to RUN/DO` lists
-- [ ] Run every file on the run-list yourself (every `s*.py` under `examples/00-minimal-poc/` through `examples/11-single-table-many-to-many/`); watch the output, peek at the table in the AWS Console
-- [ ] Come back to `/learn-this-project-absorb` in **Context-dive mode** whenever a specific spot needs unpacking (paste a `file:line` and let it follow your context, don't get dragged back to "let me walk you through the architecture")
-- [ ] Be able to explain **why** every example uses `with use_boto_session(Model, bsm):` and what would silently break if you stripped it out (it's not a pynamodb built-in — it's from the `pynamodb-session-manager` package and routes pynamodb's connection at `one.bsm` for the duration of the block)
-- [ ] Be able to explain **why** `save()` is PutItem (full-row overwrite) and `update()` is UpdateItem (partial), and walk through the bug you'd produce by using `save()` to "change one field" (folder `03-crud-basic/`)
-- [ ] Be able to explain the composite SK pattern `TX#<card_id>#<ts>` in `examples/10-single-table-one-to-many/s01_setup_and_seed.py:20-21` — why the component order is the access pattern, and what query becomes impossible if you swap the order
+- [X] Run `/learn-this-project-absorb` in **Orient mode** for the high-level map and the explicit `files to READ` vs `files to RUN/DO` lists
+- [X] Run every file on the run-list yourself (every `s*.py` under `examples/00-minimal-poc/` through `examples/11-single-table-many-to-many/`); watch the output, peek at the table in the AWS Console
+- [X] Come back to `/learn-this-project-absorb` in **Context-dive mode** whenever a specific spot needs unpacking (paste a `file:line` and let it follow your context, don't get dragged back to "let me walk you through the architecture")
+- [X] Be able to explain **why** every example uses `with use_boto_session(Model, bsm):` and what would silently break if you stripped it out (it's not a pynamodb built-in — it's from the `pynamodb-session-manager` package and routes pynamodb's connection at `one.bsm` for the duration of the block)
+- [X] Be able to explain **why** `save()` is PutItem (full-row overwrite) and `update()` is UpdateItem (partial), and walk through the bug you'd produce by using `save()` to "change one field" (folder `03-crud-basic/`)
+- [X] Be able to explain the composite SK pattern `TX#<card_id>#<ts>` in `examples/10-single-table-one-to-many/s01_setup_and_seed.py:20-21` — why the component order is the access pattern, and what query becomes impossible if you swap the order
 
 ### Quiz (verify understanding)
 - [ ] Run `/learn-this-project-quiz` in **Bank mode** — clear the floor on a 10-question round (no ⚠️ partial / ❌ wrong)
