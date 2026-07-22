@@ -24,30 +24,30 @@ Complete a deep, hands-on pass through all 12 DynamoDB example modules (`example
 - [X] Be able to explain the composite SK pattern `TX#<card_id>#<ts>` in `examples/10-single-table-one-to-many/s01_setup_and_seed.py:20-21` — why the component order is the access pattern, and what query becomes impossible if you swap the order
 
 ### Quiz (verify understanding)
-- [ ] Run `/learn-this-project-quiz` in **Bank mode** — clear the floor on a 10-question round (no ⚠️ partial / ❌ wrong)
-- [ ] Use **Open-ended mode** to drill 2–3 topics where you came up shallow — name a topic like "Single-Table-Design adjacency vs GSI inversion" and let it generate fresh discussion-style questions
-- [ ] If anything keeps coming up partial, go back to the relevant analysis doc (`docs/learn-this-project/01-knowhow-inventory.md` is the spine) or the source file, then re-quiz
+- [X] Run `/learn-this-project-quiz` in **Bank mode** — clear the floor on a 10-question round (no ⚠️ partial / ❌ wrong)
+- [X] Use **Open-ended mode** to drill 2–3 topics where you came up shallow — name a topic like "Single-Table-Design adjacency vs GSI inversion" and let it generate fresh discussion-style questions
+- [X] If anything keeps coming up partial, go back to the relevant analysis doc (`docs/learn-this-project/01-knowhow-inventory.md` is the spine) or the source file, then re-quiz
 
 ### Elevate (see what's beyond)
-- [ ] Run `/learn-this-project-elevate`, explore 1–2 upgrade directions (top candidates per the roadmap: a real `tests/` suite + DynamoDB Local fixture, a `DYNAMODB_ENDPOINT` env-var toggle in the currently-empty `OneConfigMixin`, type-safe single-table keys for folders 10–11)
-- [ ] **Converge each chosen direction into a concrete starter deliverable** with explicit file paths and a success criterion (e.g. "add `tests/test_examples.py` that subprocess-runs every `s*.py` and asserts exit 0", not vague "add tests")
-- [ ] (Optional, high-value) Hand the deliverable to `/learn-this-project-absorb` in **Build mode** and actually build the first iteration
-- [ ] Note down "next small projects" that interest you (Streams + Lambda? PartiQL? Global Tables? TTL?)
+- [X] Run `/learn-this-project-elevate`, explore 1–2 upgrade directions (top candidates per the roadmap: a real `tests/` suite + DynamoDB Local fixture, a `DYNAMODB_ENDPOINT` env-var toggle in the currently-empty `OneConfigMixin`, type-safe single-table keys for folders 10–11)
+- [X] **Converge each chosen direction into a concrete starter deliverable** with explicit file paths and a success criterion (e.g. "add `tests/test_examples.py` that subprocess-runs every `s*.py` and asserts exit 0", not vague "add tests")
+- [X] (Optional, high-value) Hand the deliverable to `/learn-this-project-absorb` in **Build mode** and actually build the first iteration
+- [X] Note down "next small projects" that interest you (Streams + Lambda? PartiQL? Global Tables? TTL?)
 
 ### Interview (pressure-test yourself)
-- [ ] Run `/learn-this-project-interview`, complete a full mock session (calibrate first: role, format, time)
-- [ ] Survive at least one pushback per Round 3 ("why pynamodb over boto3?", "why PAY_PER_REQUEST?") and Round 5 ("traffic 100x'd, what breaks first?") question
-- [ ] Review the debrief; for the 3 weak-spot questions, return to `/learn-this-project-quiz` or `/learn-this-project-absorb` and close the gap
+- [X] Run `/learn-this-project-interview`, complete a full mock session (calibrate first: role, format, time)
+- [X] Survive at least one pushback per Round 3 ("why pynamodb over boto3?", "why PAY_PER_REQUEST?") and Round 5 ("traffic 100x'd, what breaks first?") question
+- [X] Review the debrief; for the 3 weak-spot questions, return to `/learn-this-project-quiz` or `/learn-this-project-absorb` and close the gap
 
 ### Demo (learn to present)
-- [ ] Run `/learn-this-project-demo`, rehearse at least the 5-minute version (the wow beat is folder 11 — three M:N approaches side by side)
-- [ ] Walk through the cardinal-rule "do NOT show" list — confirm you know that `README.md`, `README-cn.md`, `TICKET.md`, `CLAUDE.md`, `docs/learn-this-project/`, and the five sibling skills (`absorb`, `quiz`, `elevate`, `interview`, `demo`, `publish` — **`meta` is the explicit exception, keep it**) must never appear on screen during a demo
+- [X] Run `/learn-this-project-demo`, rehearse at least the 5-minute version (the wow beat is folder 11 — three M:N approaches side by side)
+- [X] Walk through the cardinal-rule "do NOT show" list — confirm you know that `README.md`, `README-cn.md`, `TICKET.md`, `CLAUDE.md`, `docs/learn-this-project/`, and the five sibling skills (`absorb`, `quiz`, `elevate`, `interview`, `demo`, `publish` — **`meta` is the explicit exception, keep it**) must never appear on screen during a demo
 
 ### Mastery Gate
-- [ ] You can answer ~70% of quiz questions to the **3-part standard** (where + what + why), not just factually
-- [ ] You can survive at least one pushback per interview question without buckling
-- [ ] You have a clear list of "what I'd study next" from the elevate session, each item with a concrete file path
-- [ ] You can deliver the 5-minute demo without notes, without exposing any cardinal artifact
+- [X] You can answer ~70% of quiz questions to the **3-part standard** (where + what + why), not just factually
+- [X] You can survive at least one pushback per interview question without buckling
+- [X] You have a clear list of "what I'd study next" from the elevate session, each item with a concrete file path
+- [X] You can deliver the 5-minute demo without notes, without exposing any cardinal artifact
 
 ### Publish (turn it into a portfolio artifact)
 - [ ] Decide on a new public repo name (pattern: `<firstname>-<lastname>-dynamodb-poc` or `<firstname>-<lastname>-dynamodb-basic-operations-poc`)
